@@ -1,0 +1,56 @@
+<br/><br/><br/> 
+<br/><br/><br/>
+
+
+<div class="container">
+
+<div class="row justify-content-center">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="card ">
+<header class="card-header bg-secondary">
+	<h4 class="card-title mt-2 text-center text-light ">Sign In</h4>
+</header>
+<article class="card-body">
+<form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+            <div class="form-group">
+                <label for="name">Username : </label>
+                <input type="text" class="form-control" formControlName="name"
+                placeholder="Username" />
+    
+                <!-- Predefined Structural Directive -->
+                <!-- *ngIf, *ngFor, *ngSwitchCase -->
+                <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+                    <div class="text-danger"
+                    *ngIf="loginForm.controls.email.errors.required">
+                            Username required ..
+                    </div>
+                </div>
+            </div> <!-- end of email -->
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password" class="form-control" formControlName="password"
+                placeholder="Password" />
+                <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                        <div class="text-danger"
+                        *ngIf="loginForm.controls.password.errors.required">
+                                Password is required ..
+                        </div>
+                    </div>
+            </div> <!-- end of password -->
+            <button type="submit" class="btn btn-primary btn-block"> Sign In  </button>
+          
+            <button class="btn btn-danger btn-block" type="reset">Cancel</button>  
+            <br/><br/>
+            <div *ngIf="invalidLogin">
+                <div class="text-danger">
+                    Invalid Email or Password ..!
+                </div>
+            </div>
+        </form>        
+</article> <!-- card-body end .// -->
+<div class="border-top card-body text-center">New User? <a [routerLink]="['/signup']">Register</a></div>
+</div> <!-- card.// -->
+</div> <!-- col.//-->
+</div> <!-- row.//-->
+</div> 
+

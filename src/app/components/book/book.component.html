@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="row ">
+    <div class="col-6 offset-3 bg-secondary text-light" style="text-align: center;">
+        <h1>BOOK FLIGHT NOW</h1>
+    </div>
+</div>
+<br><br><br><br>
+<div class="row">
+    <div class="col">
+        <!-- <ng-container"> -->
+            <div class="row">
+                <div class="card bg-light col-3  offset-2">
+
+                    <div class="col-8 offset-2 text-dark" style="text-align: left">
+                        <strong>Note Following Details</strong>
+                        <hr />
+                        Airline : MYFLIGHT<br />
+                        FairType : Refundable<br />
+                        Cancelation : 39₹<br />
+                        SEATS & BAGGAGE:EXTRA CHARGE<br />
+                        INFLIGHT FEATURES:AVAILABLE<br />
+                        TAXES & FEES:18% GST<br />
+
+                        <br><br>
+                    </div>
+
+                </div>
+                <div class="card bg-dark col-5" >
+                    <br>
+                    <div class="col-12 text-light ">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-12">
+                                <h1><strong>{{flight.source}} TO {{flight.destination}}</strong></h1>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <h3><strong>Seats Available: {{flight.availableSeats}}</strong></h3><br>
+                                <h3><strong>Total Cost : {{flight.totalFare}}</strong></h3>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <br>
+                                <button class="btn btn-primary" (click)="paynow()" style="margin-bottom: 20px;">Make Payment</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </ng-container> -->
+    </div>
+</div>

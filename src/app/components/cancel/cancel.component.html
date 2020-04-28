@@ -1,0 +1,100 @@
+<app-navbar></app-navbar>
+<div class="row ">
+    <div class="col-6 offset-3 bg-secondary text-light" style="text-align: center;">
+        <h1>CANCEL FLIGHT NOW</h1>
+    </div>
+</div>
+
+<br>
+
+<br>
+<div class="row justify-content-center" style="padding: 5%;">
+<br><br>
+<br><br>
+<br><br>
+
+  
+    <div class="col-3 bg-light">
+        <form [formGroup]="cancelForm" (ngSubmit)="cancelFlight()" style="border-width: thick;">
+            <br>
+            <div class="form-group">
+                <label for="flightid">
+                    <h2><strong>Flight ID</strong></h2>
+                </label>
+                <input type="text" class=" form-control" formControlName="flightid" placeholder="Enter Flight ID" />
+
+                <!-- Predefined Structural Directive -->
+                <!-- *ngIf, *ngFor, *ngSwitchCase -->
+                <!-- <div *ngIf="submitted && cancelForm.controls.flightid.errors" class="error">
+                    <div class="text-danger" *ngIf="cancelForm.controls.flightid.errors.required">
+                        FlightID required ..
+                    </div>
+                </div> -->
+            </div> <!-- end of flightid -->
+            <div class="form-group">
+                <label for="bookid">
+                    <h2><strong>bookid</strong></h2>
+                </label>
+                <input type="bookid" class="form-control" formControlName="bookid" placeholder="Enter booking id" />
+                <!-- <div *ngIf="submitted && cancelForm.controls.bookid.errors" class="error">
+                    <div class="text-danger" *ngIf="cancelForm.controls.bookid.errors.required">
+                        bookid is required ..
+                    </div>
+                </div> -->
+            </div>
+            <!-- end of bookid -->
+            <button type="submit" class="btn btn-danger btn-block"> Cancel Booking </button>
+
+            <br /><br />
+            <div *ngIf="invalidLogin">
+                <div class="text-danger">
+                    Invalid Email or Password ..!
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col">
+        <ng-container *ngFor="let flight of flights2">
+            <div class="row">
+                <div class="card bg-light col-3  offset-2">
+
+                    <div class="col-8 offset-2 text-dark" style="text-align: left">
+                        <strong>Note Following Details</strong>
+                        <hr />
+                        Airline : MYFLIGHT<br />
+                        FairType : Refundable<br />
+                        Cancelation : 39₹<br />
+                        SEATS & BAGGAGE:EXTRA CHARGE<br />
+                        INFLIGHT FEATURES:AVAILABLE<br />
+                        TAXES & FEES:18% GST<br />
+
+                        <br><br>
+                    </div>
+
+                </div>
+                <div class="card bg-dark col-5">
+                    <br>
+                    <div class="col-12 text-light ">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-12">
+                                <h1><strong>{{flight.source}} TO {{flight.destination}}</strong></h1>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <h3><strong>Seats Available: 29</strong></h3><br>
+                                <h3><strong>Total Cost : {{flight.cost}}</strong></h3>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <br>
+                                <button class="btn btn-success" (click)="paynow()">Make Payment</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

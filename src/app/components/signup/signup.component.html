@@ -1,0 +1,54 @@
+<br /><br />
+<br /><br />
+<br /><br />
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<div class="card  ">
+				<header class="card-header bg-secondary">
+					<h4 class="card-title mt-2 text-center text-light">Sign Up</h4>
+				</header>
+				<article class="card-body">
+					<form [formGroup]="signUpForm" (ngSubmit)="verifyLogin()">
+						<div class="form-row form-group">
+							<label>First name </label>
+							<input type="text" class="form-control" formControlName="name" placeholder="">
+						</div> <!-- form-group end.// -->
+						<div class="form-row form-group">
+							<label>User name </label>
+							<input type="text" class="form-control" formControlName="username" placeholder="">
+						</div> <!-- form-group end.// -->
+						<div class="form-row">
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 form-group">
+								<label>Phone Number</label>
+								<input type="number" class="form-control" formControlName="phoneNum" placeholder="">
+								<small class="form-text text-muted">We'll never share your phone number with anyone
+									else.</small>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 offset-lg-1 form-group">
+								<label>Age</label>
+								<input type="number" class="form-control" formControlName="age" placeholder=" ">
+							</div> <!-- form-group end.// -->
+						</div> <!-- form-group end.// -->
+						<div class="form-group">
+							<label>Create password</label>
+							<input class="form-control" formControlName="password" type="password">
+						</div> <!-- form-group end.// -->
+						<!-- <div class="form-group">
+		<label>Confirm password</label>
+	    <input class="form-control" formControlName="password2" type="password">
+	 </div> form-group end.//   -->
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block"> Register </button>
+						</div> <!-- form-group// -->
+						<small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+							Terms of use and Privacy Policy.</small>
+					</form>
+				</article> <!-- card-body end .// -->
+				<div class="border-top card-body text-center">Have an account? <a [routerLink]="['/login']">Log In</a>
+				</div>
+			</div> <!-- card.// -->
+		</div> <!-- col.//-->
+	</div> <!-- row.//-->
+</div>
+<!--container end.//-->
